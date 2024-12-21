@@ -1,0 +1,52 @@
+.potDiv{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: fit-content;
+    max-height: 600px;
+    width: fit-content;
+    overflow-y: scroll;
+    min-width: 300px;
+    padding: 1rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+
+    h4{
+        text-align: center;
+        color: rgba(253, 255, 254, 0.699);
+    }
+
+    .teamCard{
+        padding: 1rem 0;
+        display: flex;
+    }
+    .teamCard:not(:last-child){
+        border-bottom: 1px solid white;
+    }
+    
+    .addTeamButton{
+        display: block;
+        margin: 1rem auto;  
+        width: 100%;
+        svg{
+            margin-bottom: 4px;
+        }
+    }
+
+    input{
+        padding: .2rem .4rem;
+        height: 34px;
+        width: 100%;
+
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.822);
+        }
+    }
+
+    .trashBtn{
+        background-color: red;
+        padding: .2rem;
+        border: 1px solid black;
+    }
+    
+}

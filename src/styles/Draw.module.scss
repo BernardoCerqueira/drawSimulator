@@ -1,0 +1,15 @@
+@use "./variables.scss";
+
+.main{
+    min-height: 90vh;
+    width: 100%;
+    background-color: variables.$dark-color;
+    color: variables.$light-color;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 1rem;
+}
+
+.groupsDiv{
+    row-gap: 5rem;
+}

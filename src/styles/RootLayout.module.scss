@@ -1,0 +1,36 @@
+@use "./variables.scss";
+
+.header{
+    background-color: variables.$dark-color;
+    color: variables.$light-color;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid white;
+    a{
+        text-decoration: none;
+        color: variables.$light-color;
+        font-size: 18px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer{
+    text-align: center;
+    padding: 1rem;
+    background-color: variables.$dark-color;
+    color: variables.$light-color;
+
+    a{
+        text-decoration: none;
+        color: variables.$light-color;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

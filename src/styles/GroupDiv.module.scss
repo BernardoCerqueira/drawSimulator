@@ -1,0 +1,22 @@
+@use "./variables.scss";
+
+.groupDiv{
+    background-color: variables.$light-color;
+    color: variables.$dark-color;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    font-size: 22px;
+    padding: 1rem;
+    border-radius: 20px;
+    margin: auto;
+    text-align: center;
+    border: 3px solid black;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.541);
+}
+.teamName{
+    padding: .5rem 1rem;
+}
+.teamName:not(:last-child){
+    border-bottom: 1px solid black;
+}
