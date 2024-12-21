@@ -7,26 +7,28 @@ interface Team {
 }
 
 export type ContextData = {
-    pot: boolean,
-    setPot: React.Dispatch<React.SetStateAction<boolean>>,
-    teams: Team[],
-    setTeams: React.Dispatch<React.SetStateAction<Team[]>>,
-    teamsInPots: Team[][],
-    setTeamsInPots: React.Dispatch<React.SetStateAction<Team[][]>>,
-    groupsQtt: number,
-    setGroupsQtt: React.Dispatch<React.SetStateAction<number>>,
-    potsQtt: number,
-    setPotsQtt: React.Dispatch<React.SetStateAction<number>>,
-    potsQttArray: number[],
+    pot: boolean
+    setPot: React.Dispatch<React.SetStateAction<boolean>>
+    teams: Team[]
+    setTeams: React.Dispatch<React.SetStateAction<Team[]>>
+    teamsInPots: Team[][]
+    setTeamsInPots: React.Dispatch<React.SetStateAction<Team[][]>>
+    groupsQtt: number
+    setGroupsQtt: React.Dispatch<React.SetStateAction<number>>
+    potsQtt: number
+    setPotsQtt: React.Dispatch<React.SetStateAction<number>>
+    potsQttArray: number[]
     setPotsQttArray: React.Dispatch<React.SetStateAction<number[]>>
-    addTeam: (id: number, state: string, potIndex?: number) => void,
-    deleteTeam: (id: number) => void,
-    submitDraw: () => void,
+    addTeam: (id: number, state: string, potIndex?: number) => void
+    deleteTeam: (id: number) => void
+    submitDraw: () => void
     shuffleArray: (array: any[]) => any[]
     splitTeamsIntoGroups: (teamsToSplit: any[]) => any[]
     addTeamInPot: (id: number, potIndex: number) => void
     deleteTeamFromPot: (id: number, potIndex: number) => void
     submitDrawWithPots: () => void
+    incrementInputValue: (id: string) => void
+    decrementInputValue: (id: string) => void
 }
 
 export type ContextProviderProps = {
@@ -222,6 +224,34 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
         }
     }
 
+    function incrementInputValue(id: string){
+        const input = document.getElementById(id) as HTMLInputElement
+        if(input) input.stepUp()
+        switch(id){
+            case "potsQtt":
+                setPotsQtt(+input.value)
+                break
+            
+            case "groupsQtt":
+                setGroupsQtt(+input.value)
+                break
+        }
+    }
+
+    function decrementInputValue(id: string){
+        const input = document.getElementById(id) as HTMLInputElement
+        if(input) input.stepDown()
+            switch(id){
+                case "potsQtt":
+                    setPotsQtt(+input.value)
+                    break
+                
+                case "groupsQtt":
+                    setGroupsQtt(+input.value)
+                    break
+            }
+    }
+
     return (
         <Context.Provider value={{
             pot,
@@ -243,7 +273,9 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({ children }) =>
             splitTeamsIntoGroups,
             addTeamInPot,
             deleteTeamFromPot,
-            submitDrawWithPots
+            submitDrawWithPots,
+            incrementInputValue,
+            decrementInputValue
         }}>
             {children}
         </Context.Provider>

@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { Col, Input, Label, Row } from "reactstrap"
+import { Button, Col, Input, Label, Row } from "reactstrap"
 import styles from "@/styles/Teams.module.scss"
 import RootLayout from "@/components/RootLayout"
 import { DrawButton } from "@/components/DrawButton"
@@ -13,10 +13,11 @@ export default function Teams() {
         groupsQtt,
         setGroupsQtt,
         potsQtt,
-        setPotsQtt,
         potsQttArray,
         setPotsQttArray,
         setTeamsInPots,
+        incrementInputValue,
+        decrementInputValue
     } = useContext(Context)
 
     useEffect(() => {
@@ -43,15 +44,25 @@ export default function Teams() {
                 <section className={styles.potMain}>
                     <div className={styles.inputDiv}>
                         <Label htmlFor="potsQtt">Quantos potes serão?</Label>
-                        <Input
-                            type="number"
-                            min={2}
-                            max={32}
-                            name="potsQtt"
-                            value={potsQtt}
-                            onChange={(ev) => setPotsQtt(+ev.target.value)}
-                            onKeyDown={(ev) => ev.preventDefault()}
-                        />
+                        <div className={styles.buttonsDiv}>
+                            <Input
+                                type="number"
+                                min={2}
+                                max={32}
+                                name="potsQtt"
+                                id="potsQtt"
+                                value={potsQtt}
+                                onKeyDown={(ev) => ev.preventDefault()}
+                            />
+                            <Button
+                                color="success"
+                                onClick={() => incrementInputValue("potsQtt")}
+                            >+</Button>
+                            <Button
+                                color="danger"
+                                onClick={() => decrementInputValue("potsQtt")}
+                            >-</Button>
+                        </div>
                     </div>
                     <Row className={styles.row}>
                         {
@@ -68,14 +79,25 @@ export default function Teams() {
                 <section className={styles.noPotMain}>
                     <div className={styles.inputDiv}>
                         <Label htmlFor="groupsQtt">Quantos grupos serão?</Label>
-                        <Input
-                            type="number"
-                            min={1}
-                            max={32}
-                            name="groupsQtt"
-                            value={groupsQtt}
-                            onChange={(ev) => setGroupsQtt(+ev.target.value)}
-                        />
+                        <div className={styles.buttonsDiv}>
+                            <Input
+                                type="number"
+                                min={1}
+                                max={32}
+                                name="groupsQtt"
+                                id="groupsQtt"
+                                value={groupsQtt}
+                                onKeyDown={(ev) => ev.preventDefault()}
+                            />
+                            <Button
+                                color="success"
+                                onClick={() => incrementInputValue("groupsQtt")}
+                            >+</Button>
+                            <Button
+                                color="danger"
+                                onClick={() => decrementInputValue("groupsQtt")}
+                            >-</Button>
+                        </div>
                     </div>
                     <TeamsDiv title={"LISTA DE TIMES"} />
                     <DrawButton pots={false}/>

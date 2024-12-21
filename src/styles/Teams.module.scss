@@ -38,3 +38,18 @@
     width: 100%;
     margin: 3rem auto;
 }
+
+.buttonsDiv{
+    display: flex;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .noPotMain, .potMain{
+        padding: 2rem 0;
+    }
+
+    .inputDiv{
+        flex-direction: column;
+    }
+}

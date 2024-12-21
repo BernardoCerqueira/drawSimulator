@@ -12,6 +12,7 @@
         text-decoration: none;
         color: variables.$light-color;
         font-size: 18px;
+        margin-bottom: 4px;
 
         &:hover{
             text-decoration: underline;
@@ -32,5 +33,11 @@
         &:hover{
             text-decoration: underline;
         }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header{
+        flex-direction: column;
     }
 }
