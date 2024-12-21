@@ -1,40 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Draw Simulator
+Draw Simulator é uma aplicação web interativa que permite realizar sorteios personalizados entre times definidos pelo usuário. Com uma interface simples e flexível, a aplicação foi projetada para criar grupos com ou sem a utilização de potes, tornando-a ideal para campeonatos, eventos ou outras competições.
 
-## Getting Started
+Construída com as tecnologias modernas Next.js, React, Sass e Bootstrap, a aplicação oferece uma experiência dinâmica e responsiva, garantindo um desempenho rápido e uma navegação intuitiva.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Landing Page:
+* Página inicial com um botão que direciona o usuário para as próximas etapas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Screenshot 2024-12-21 132721](https://github.com/user-attachments/assets/d68001be-f8c0-461a-a0a1-9aaea0cf4d39)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+2. Escolha do tipo de sorteio:
+* Página onde o utilizador escolhe entre:
+  
+  * Sorteio com potes: os times são divididos em categorias (potes) antes do sorteio.
+  * Sorteio sem potes: todos os times são sorteados de forma aleatória sem divisão por categorias.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![Screenshot 2024-12-21 132745](https://github.com/user-attachments/assets/e1094a8d-012f-49df-b9b8-a2fe4e51f73f)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+3. Inserção de times:
+* Página dinâmica onde o usuário pode adicionar os times ou equipes que participarão do sorteio.
+* A interface adapta-se dependendo da escolha feita anteriormente (com ou sem potes):
+  * Caso sem potes, os times são adicionados diretamente em uma lista única.
+ 
+  ![Screenshot 2024-12-21 132841](https://github.com/user-attachments/assets/7e7c0b9c-2c14-4eed-ad63-e2523b987319)
+  
+  * Caso com potes, o utilizador poderá adicionar diferentes potes e os times correspondentes.
+  * A quantidade de potes renderizados na tela varia de acordo com o número de potes escolhido pelo usuário.
+  
+  ![Screenshot 2024-12-21 132922](https://github.com/user-attachments/assets/4cb414c4-9d42-4a66-bfd0-94063f81181f)
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Resultado do sorteio:
+* Grupos sem potes: exibição dos grupos formados de forma aleatória.
 
-## Learn More
+![Screenshot 2024-12-21 132856](https://github.com/user-attachments/assets/d235e832-70ac-4f25-824d-81a44788f3e8)
 
-To learn more about Next.js, take a look at the following resources:
+* Grupos com potes: exibição dos grupos formados após o sorteio, com os times alocados conforme os potes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+![Screenshot 2024-12-21 132943](https://github.com/user-attachments/assets/89993f5d-67ac-4eb4-828d-c123ee46a3e6)
