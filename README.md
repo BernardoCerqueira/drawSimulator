@@ -23,12 +23,12 @@ Construída com as tecnologias modernas Next.js, React, Sass e Bootstrap, a apli
 * A interface adapta-se dependendo da escolha feita anteriormente (com ou sem potes):
   * Caso sem potes, os times são adicionados diretamente em uma lista única.
  
-  ![Screenshot 2024-12-21 132841](https://github.com/user-attachments/assets/7e7c0b9c-2c14-4eed-ad63-e2523b987319)
-  
+  ![image](https://github.com/user-attachments/assets/1ab1d213-0ca4-4a65-9ad7-de1bccaddb85)
+
   * Caso com potes, o utilizador poderá adicionar diferentes potes e os times correspondentes.
   * A quantidade de potes renderizados na tela varia de acordo com o número de potes escolhido pelo usuário.
   
-  ![Screenshot 2024-12-21 132922](https://github.com/user-attachments/assets/4cb414c4-9d42-4a66-bfd0-94063f81181f)
+  ![image](https://github.com/user-attachments/assets/440ad4fa-2d7b-4e3f-8b02-59dd8ec0ba0f)
 
 4. Resultado do sorteio:
 * Grupos sem potes: exibição dos grupos formados de forma aleatória.
