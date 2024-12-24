@@ -6,13 +6,13 @@ import RootLayout from "@/components/RootLayout"
 import { Context } from "@/contexts/Context"
 
 export default function Pot(){
-    const context = useContext(Context)
+    const {setPot} = useContext(Context)
 
     async function handleClick(booleanValue: boolean) {
         if(booleanValue){
-            context.setPot(true)
+            setPot(true)
         }else{
-            context.setPot(false)
+            setPot(false)
         }
     }
 
