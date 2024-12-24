@@ -15,7 +15,11 @@ export default function Draw() {
     } = useContext(Context)
 
     useEffect(() => {
-        setTeams(shuffleArray(teams))
+        setTeams( () => {
+            const savedTeams = localStorage.getItem("drawTeams")
+            if(savedTeams) return shuffleArray(JSON.parse(savedTeams))
+            return shuffleArray(teams)
+        }) 
     }, [])
 
     const groups = splitTeamsIntoGroups(teams)

@@ -28,6 +28,8 @@ export default function DrawWithPots() {
     }
 
     useEffect(() => {
+        const savedTeams = localStorage.getItem("drawTeamsWPots")
+        if(savedTeams) setTeamsInPots(JSON.parse(savedTeams))
         setTeamsInPots((currentState) => {
             const shuffledTeams = currentState.map((pot) => {
                 const shuffledPot = shuffleArray(pot)
